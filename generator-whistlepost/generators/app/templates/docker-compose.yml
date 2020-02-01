@@ -1,0 +1,18 @@
+version: "3"
+services:
+  whistlepost:
+    image: "micronode/whistlepost:1.1.5-develop-SNAPSHOT"
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./src/app:/wp/apps/$projectId:ro
+      - ./src/assets:/wp/assets/$projectId:ro
+      - ./src/content:/wp/content/$projectId:ro
+
+  autoheal:
+    restart: always
+    image: willfarrell/autoheal
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

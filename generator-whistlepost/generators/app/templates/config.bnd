@@ -1,0 +1,3 @@
+Sling-Initial-Content: SLING-INF/content;overwrite:=false
+Bundle-Name: wnews-config
+Bundle-SymbolicName: org.wnews.wnews-config

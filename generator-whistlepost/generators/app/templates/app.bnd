@@ -1,0 +1,4 @@
+Sling-Initial-Content: SLING-INF/content;path:=/apps/wnews;overwrite:=true
+Sling-Bundle-Resources: /assets/wnews;path:=/assets
+Bundle-Name: wnews-app
+Bundle-SymbolicName: org.wnews.wnews-app
