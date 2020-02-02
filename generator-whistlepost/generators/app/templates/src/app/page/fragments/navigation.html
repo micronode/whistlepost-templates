@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<nav data-th-fragment="navbar" class="navbar navbar-expand-md navbar-light sticky-top" id="basepatterns-top-nav" style="background-color: #ffffff;">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="navbar-nav mr-auto">
+            <li data-th-class="${request.requestPathInfo.suffix == '/cicd'}? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" href="/content/<%= projectId %>/cicd/current.html">CI/CD</a>
+            </li>
+            <li class="nav-item basepatterns-navbar-link-em dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                </ul>
+            </li>
+        </ul>
+    </div><!--/.nav-collapse -->
+</nav>
+</body>
+</html>

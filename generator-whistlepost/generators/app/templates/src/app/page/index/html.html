@@ -1,7 +1,27 @@
-<html>
-<head data-th-replace="/apps/$projectId/page/fragments/default.html::header"></head>
+<!DOCTYPE html>
+<html lang="en" data-th-with="page=${request.adaptTo(@org.mnode.whistlepost.model.Page@class)}">
+
+<head data-th-replace="/apps/<%= projectId %>/page/fragments/head.html::default">
+</head>
+
 <body>
-<span id="name" data-th-text="${resource.valueMap['description']}">Placeholder</span>
-<span data-th-replace="/apps/$projectId/page/fragments/default.html::footer"/>
+
+<div class="container-holygrail">
+  <header data-th-replace="/apps/<%= projectId %>/page/fragments/masthead.html::default">
+  </header>
+
+  <nav data-th-replace="/apps/<%= projectId %>/page/fragments/navigation.html::navbar">
+  </nav>
+
+  <main>
+  </main>
+
+  <aside data-th-replace="/apps/<%= projectId %>/page/fragments/advertisement.html::sidebar-panel">
+  </aside>
+
+  <footer data-th-replace="/apps/<%= projectId %>/page/fragments/footer.html::footer-panel">
+  </footer>
+</div>
 </body>
+
 </html>

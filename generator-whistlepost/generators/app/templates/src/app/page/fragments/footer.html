@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<nav data-th-fragment="footer-nav">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="/content/<%= projectId %>/advertising.html">Advertise</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/content/<%= projectId %>/subscribe.html">Subscribe</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/content/<%= projectId %>/contact.html">Contact Us</a>
+        </li>
+    </ul>
+</nav>
+
+<footer data-th-fragment="footer-panel">
+
+    <nav data-th-replace="/apps/<%= projectId %>/page/fragments/footer.html::footer-nav">
+    </nav>
+
+    <hr style="text-align: center; width: 70%">
+
+    <p>
+        Created with
+        <a href="http://whistlepost.org" target="_blank">Whistlepost</a> | &copy;
+        <span data-th-text="${resolver.getResource('/content/<%= projectId %>/footer').valueMap['copyright']}">[Placeholder]</span>
+    </p>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/<%= projectId %>/js/<%= projectId %>.bundle.js"></script>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+<section data-th-each="advertisement : ${advertisements}" data-th-fragment="list(advertisements)">
+    <div data-th-replace="/apps/<%= projectId %>/page/fragments/advertisement.html::sidebar(${article})">
+    </div>
+</section>
+
+<article data-th-fragment="sidebar(advertisement)">
+    <a data-th-href="|${advertisement.path}.html|" class="full-page">
+        <img class="img-fluid" data-th-src="|/content/<%= projectId %>/media/${advertisement.media}|" data-th-alt="|${advertisement.title} image|"/>
+    </a>
+</article>
+
+<aside data-th-fragment="sidebar-panel" id="sidebar-ads" data-th-with="list=${resolver.getResource('/content/<%= projectId %>/advertisements').adaptTo(@org.mnode.whistlepost.model.AdvertisementList@class)}">
+    <th:block data-th-each="advertisement : ${list.advertisements}">
+        <div data-th-replace="/apps/<%= projectId %>/page/fragments/advertisement.html::sidebar(${advertisement})">
+        </div>
+    </th:block>
+</aside>
+
+</body>
+</html>
